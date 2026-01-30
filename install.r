@@ -10,7 +10,8 @@ install.packages(c(
     "ggrepel",
     "readxl",
     "here",
-    "rmarkdown"
+    "rmarkdown",
+    "IRkernal"
 ))
 
 # Install specific version of meffonym package from GitHub
