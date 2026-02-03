@@ -1,0 +1,39 @@
+Assuming unrestricted shared filesystem usage.
+host: ip-10-0-18-166
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Singularity containers: ignored
+Job stats:
+job              count
+-------------  -------
+all                  1
+download_data        1
+total                2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Tue Feb  3 13:32:18 2026]
+localrule download_data:
+    input: scripts/files.csv
+    output: /data/user40/rhds/results/md5sums.txt
+    log: /data/user40/rhds/results/logs/download-data.log
+    jobid: 1
+    reason: Missing output files: /data/user40/rhds/results/md5sums.txt
+    resources: tmpdir=/tmp
+[Tue Feb  3 13:32:41 2026]
+Finished jobid: 1 (Rule: download_data)
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Tue Feb  3 13:32:41 2026]
+localrule all:
+    input: /data/user40/rhds/results/md5sums.txt
+    jobid: 0
+    reason: Input files updated by another job: /data/user40/rhds/results/md5sums.txt
+    resources: tmpdir=/tmp
+[Tue Feb  3 13:32:41 2026]
+Finished jobid: 0 (Rule: all)
+2 of 2 steps (100%) done
+Complete log(s): /users/home/user40/repo/rhds/.snakemake/log/2026-02-03T133217.486593.snakemake.log
